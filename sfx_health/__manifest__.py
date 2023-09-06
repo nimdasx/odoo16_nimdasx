@@ -4,7 +4,7 @@
     'website': "https://sofy.web.id",
     'summary': 'Health Information System SFX',
     'version': '1.0',
-    'application': 'true',
+    'application': True,
     'category': 'Productivity',
     'license': 'Other proprietary',
     'depends': ['base']
