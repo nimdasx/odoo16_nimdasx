@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem id="sfx_menu_root" name="SFX Health">
+        <menuitem id="sfx_menu_konfigurasi" name="Konfigurasi">
+            <menuitem id="sfx_menu_obat" action="sfx_obat_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

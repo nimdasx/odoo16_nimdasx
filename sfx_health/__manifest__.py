@@ -11,7 +11,10 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        'data/sfx_obat.csv',
+        'keamanan/ir.model.access.csv',
+        'tampilan/tampilan_sfx_obat.xml',
+        'tampilan/menu.xml'
     ],
 
 }

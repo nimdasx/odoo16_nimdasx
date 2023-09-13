@@ -1,0 +1,7 @@
+<odoo>
+    <record id="sfx_obat_action" model="ir.actions.act_window">
+        <field name="name">Data Obat</field>
+        <field name="res_model">sfx_obat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
