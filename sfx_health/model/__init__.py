@@ -1,1 +1,1 @@
-from . import obat
+from . import sfx_obat
