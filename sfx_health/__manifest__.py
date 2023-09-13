@@ -7,5 +7,11 @@
     'application': True,
     'category': 'Productivity',
     'license': 'Other proprietary',
-    'depends': ['base']
+    'depends': ['base'],
+
+    # always loaded
+    'data': [
+        'security/ir.model.access.csv',
+    ],
+
 }
