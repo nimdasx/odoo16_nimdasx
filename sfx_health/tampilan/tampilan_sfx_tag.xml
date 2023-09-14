@@ -1,0 +1,10 @@
+<odoo>
+
+    <!-- action -->
+    <record id="sfx_tag_action" model="ir.actions.act_window">
+        <field name="name">Data Tag</field>
+        <field name="res_model">sfx_tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

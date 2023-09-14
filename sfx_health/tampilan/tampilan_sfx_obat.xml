@@ -42,6 +42,9 @@
                         <group>
                             <field name="jenis_obat_id"/>
                         </group>
+                        <group>
+                            <field name="tag_ids" widget="many2many_tags"/>
+                        </group>
                         <notebook>
                             <page string="Deskripsi Gundul">
                                 <h1>Benarkan Fadhli gundul</h1>
