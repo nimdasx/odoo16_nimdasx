@@ -1,7 +1,98 @@
 <odoo>
+
+    <!-- action -->
     <record id="sfx_obat_action" model="ir.actions.act_window">
         <field name="name">Data Obat</field>
         <field name="res_model">sfx_obat</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- list / tree / tabular -->
+    <record id="sfx_obat_tree" model="ir.ui.view">
+        <field name="name">Gundul Pacul</field>
+        <field name="model">sfx_obat</field>
+        <field name="arch" type="xml">
+            <tree string="Sapine Ucul">
+                <field name="name"/>
+                <field name="tanggal"/>
+                <field name="tipe_gundul"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form -->
+    <record id="sfx_obat_form" model="ir.ui.view">
+        <field name="name">Iki Form Yoooo</field>
+        <field name="model">sfx_obat</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <sheet>
+                    <h1>Atau Botak</h1>
+                    <hr></hr>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="tanggal"/>
+                        </group>
+                        <group>
+                            <field name="embuh"/>
+                        </group>
+                        <group>
+                            <field name="jenis_obat_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Deskripsi Gundul">
+                                <h1>Benarkan Fadhli gundul</h1>
+                                <group>
+                                    <field name="deskripsi"/>
+                                </group>
+                                <group>
+                                    <field name="harga"/>
+                                </group>
+                            </page>
+                            <page string="Fadhli Turu">
+                                <h1>Sopo sik turu ora ono kok</h1>
+                                <group>
+                                    <field name="area"/>
+                                </group>
+                                <group>
+                                    <field name="garasi"/>
+                                </group>
+                                <group>
+                                    <field name="tipe_gundul"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- search -->
+    <record id="sfx_obat_search" model="ir.ui.view">
+        <field name="name">Ntah iki opo kok ra mudeng aku</field>
+        <field name="model">sfx_obat</field>
+        <field name="arch" type="xml">
+            <search string="Delivery Carrier">
+                <field name="name" string="Carrier"/>
+                <field name="embuh"/>
+                <!--<separator/>-->
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <filter string="Ada Area" name="arealebihdari0" domain="[('area', '&gt;', 0)]"/>
+                <!--                <group expand="1" string="Group By Fadhli">-->
+                <group>
+                    <!--<filter string="Tipe Gundul"
+                            name="groupbytipegundul"
+                            context="{'group_by':'tipe_gundul', 'residual_visible':True}"/>-->
+                    <filter string="Tipe Gundul"
+                            name="groupbytipegundul"
+                            context="{'group_by':'tipe_gundul'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
 </odoo>

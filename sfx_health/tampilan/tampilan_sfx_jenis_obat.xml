@@ -1,0 +1,21 @@
+<odoo>
+
+    <!-- action -->
+    <record id="sfx_jenis_obat_action" model="ir.actions.act_window">
+        <field name="name">Data Jenis Obat</field>
+        <field name="res_model">sfx_jenis_obat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- list / tree / tabular -->
+<!--    <record id="sfx_obat_tree" model="ir.ui.view">-->
+<!--        <field name="name">Gundul Pacul</field>-->
+<!--        <field name="model">sfx_jenis_obat</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Sapine Ucul">-->
+<!--                <field name="name"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>

@@ -12,9 +12,11 @@
     # always loaded
     'data': [
         'data/sfx_obat.csv',
+        'data/sfx_jenis_obat.csv',
         'keamanan/ir.model.access.csv',
         'tampilan/tampilan_sfx_obat.xml',
-        'tampilan/menu.xml'
+        'tampilan/tampilan_sfx_jenis_obat.xml',
+        'tampilan/menu.xml',
     ],
 
 }
