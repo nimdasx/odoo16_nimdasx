@@ -2,4 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 sfx_health.access_sfx_obat,access_sfx_obat,sfx_health.model_sfx_obat,base.group_user,1,1,1,1
 sfx_health.access_sfx_jenis_obat,access_sfx_jenis_obat,sfx_health.model_sfx_jenis_obat,base.group_user,1,1,1,1
 sfx_health.access_sfx_tag,access_sfx_tag,sfx_health.model_sfx_tag,base.group_user,1,1,1,1
-sfx_health.access_sfx_byod,access_sfx_byod,sfx_health.model_sfx_byod,base.group_user,1,1,1,1
+sfx_health.access_sfx_bud,access_sfx_bud,sfx_health.model_sfx_bud,base.group_user,1,1,1,1

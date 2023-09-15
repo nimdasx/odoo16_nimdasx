@@ -35,4 +35,5 @@ class SfxObat(models.Model):
         selection=[('new', 'Baru'), ('received', 'Offer Received')],
         default="new")
     jenis_obat_id = fields.Many2one("sfx_jenis_obat")
-    tag_ids = fields.Many2many("sfx_tag",string="Tag Tak Ketak")
+    tag_ids = fields.Many2many("sfx_tag", string="Tag Tak Ketak")
+    bud_ids = fields.One2many("sfx_bud", "obat_id", string="BUD Lines")

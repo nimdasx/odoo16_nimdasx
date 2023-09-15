@@ -67,6 +67,9 @@
                                     <field name="tipe_gundul"/>
                                 </group>
                             </page>
+                            <page string="Daftar Beyond Usage Dage">
+                                <field name="bud_ids"/>
+                            </page>
                         </notebook>
                     </group>
                 </sheet>

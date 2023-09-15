@@ -1,3 +1,5 @@
-"id","name","tanggal",jenis_obat_id:id
-sfx_obat_012sdse3e,parang endok,2023-02-04,sableng
-sfx_obat_02dddssdd,fadhli daswir,2023-05-09,mendem
+"id","name","tanggal",jenis_obat_id:id,bud_ids/id,bud_ids/dicampur_dengan,bud_ids/expired_setelah
+sfx_obat_012sdse3e,parang endok,2023-02-04,sableng,sfx_bud_01,bakwan goreng,5
+,,,,sfx_bud_02,telo,56
+sfx_obat_02dddssdd,fadhli daswir,2023-05-09,mendem,sfx_bud_03,teklek,4
+,,,,sfx_bud_04,gundam,64

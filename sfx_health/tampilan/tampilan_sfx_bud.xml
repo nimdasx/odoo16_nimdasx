@@ -1,0 +1,37 @@
+<odoo>
+
+    <!-- list / tree / tabular -->
+    <record id="sfx_bud_tree" model="ir.ui.view">
+        <field name="name">Gundul Pacul</field>
+        <field name="model">sfx_bud</field>
+        <field name="arch" type="xml">
+            <tree string="Sapine Mlayu">
+                <field name="dicampur_dengan"/>
+                <field name="expired_setelah"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form -->
+    <record id="sfx_bud_form" model="ir.ui.view">
+        <field name="name">Iki Form Yoooo Kangkang</field>
+        <field name="model">sfx_bud</field>
+        <field name="arch" type="xml">
+            <form string="Lost In Space">
+                <sheet>
+                    <h1>Gundul Mode</h1>
+                    <hr></hr>
+                    <group>
+                        <group>
+                            <field name="dicampur_dengan"/>
+                        </group>
+                        <group>
+                            <field name="expired_setelah"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
