@@ -28,8 +28,14 @@ odoo/odoo-bin -c konfig_community.conf -u nimdasx_health -d odoo16_community_01
 
 ## catatan
 
-masih ngebug 15 sept 2023
+*bug 01 15 sept 2023*
 1. upgrade/install pertama semua record child (sfx_bug) berhasil diimport (ok)
 2. upgrade/install kedua, smua record child (sfx_bud) kok malah ilang (fail)
 3. upgrade/install ketiga, semua record child (sfx_bug) berhasil terimport lagi (ok)
 4. begitu seterusnya
+
+sudah ada solusi, pisahkan childnya (sfx_bug) di file sendiri  
+sfx_obat.00.csv tidak dipakai, ganti dengan 2 filx sfx_obat.csv dan sfx_bud.csv  
+
+*bug 02*
+

@@ -14,6 +14,7 @@
         'data/sfx_jenis_obat.csv',
         'data/sfx_tag.csv',
         'data/sfx_obat.csv',
+        'data/sfx_bud.csv',
         'keamanan/ir.model.access.csv',
         'tampilan/tampilan_sfx_jenis_obat.xml',
         'tampilan/tampilan_sfx_tag.xml',
