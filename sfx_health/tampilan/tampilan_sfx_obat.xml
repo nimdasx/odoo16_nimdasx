@@ -35,6 +35,7 @@
                         </group>
                         <group>
                             <field name="tanggal"/>
+                            <field name="tanggal_embuh"/>
                         </group>
                         <group>
                             <field name="embuh"/>

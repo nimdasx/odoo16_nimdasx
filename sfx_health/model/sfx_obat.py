@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
 
 
@@ -37,3 +37,9 @@ class SfxObat(models.Model):
     jenis_obat_id = fields.Many2one("sfx_jenis_obat")
     tag_ids = fields.Many2many("sfx_tag", string="Tag Tak Ketak")
     bud_ids = fields.One2many("sfx_bud", "obat_id", string="BUD Lines")
+    tanggal_embuh = fields.Date(compute="_compute_tanggal_embuh")
+
+    @api.depends("tanggal")
+    def _compute_tanggal_embuh(self):
+        for ngorok in self:
+            ngorok.tanggal_embuh = ngorok.tanggal + relativedelta(months=3)
