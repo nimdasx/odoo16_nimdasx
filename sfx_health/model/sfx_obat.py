@@ -38,8 +38,24 @@ class SfxObat(models.Model):
     tag_ids = fields.Many2many("sfx_tag", string="Tag Tak Ketak")
     bud_ids = fields.One2many("sfx_bud", "obat_id", string="BUD Lines")
     tanggal_embuh = fields.Date(compute="_compute_tanggal_embuh")
+    expired_paling_lama = fields.Integer(compute="_compute_expired_paling_lama")
+    paling_lama_dicampur_dengan = fields.Char(compute="_compute_paling_lama_dicampur_dengan")
 
     @api.depends("tanggal")
     def _compute_tanggal_embuh(self):
         for ngorok in self:
             ngorok.tanggal_embuh = ngorok.tanggal + relativedelta(months=3)
+
+    @api.depends("bud_ids.expired_setelah")
+    def _compute_expired_paling_lama(self):
+        for turu in self:
+            turu.expired_paling_lama = max(turu.bud_ids.mapped('expired_setelah'))
+
+    @api.depends('bud_ids.expired_setelah')
+    def _compute_paling_lama_dicampur_dengan(self):
+        for obat in self:
+            bud_paling_lama = obat.bud_ids.sorted(key=lambda r: r.expired_setelah, reverse=True)
+            if bud_paling_lama:
+                obat.paling_lama_dicampur_dengan = bud_paling_lama[0].dicampur_dengan
+            else:
+                obat.paling_lama_dicampur_dengan = 'tidak ada'
