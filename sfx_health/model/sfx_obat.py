@@ -54,8 +54,13 @@ class SfxObat(models.Model):
     @api.depends('bud_ids.expired_setelah')
     def _compute_paling_lama_dicampur_dengan(self):
         for obat in self:
-            bud_paling_lama = obat.bud_ids.sorted(key=lambda r: r.expired_setelah, reverse=True)
-            if bud_paling_lama:
-                obat.paling_lama_dicampur_dengan = bud_paling_lama[0].dicampur_dengan
+
+            def sorting_key(record):
+                return record.expired_setelah
+
+            # buds = obat.bud_ids.sorted(key=lambda roramudeng: roramudeng.expired_setelah, reverse=True)
+            buds = obat.bud_ids.sorted(key=sorting_key, reverse=True)
+            if buds:
+                obat.paling_lama_dicampur_dengan = buds[0].dicampur_dengan
             else:
                 obat.paling_lama_dicampur_dengan = 'tidak ada'
