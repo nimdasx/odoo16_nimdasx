@@ -40,6 +40,10 @@
                             <field name="expired_paling_lama"/>
                             <field name="paling_lama_dicampur_dengan"/>
                         </group>
+                        <group>
+                            <field name="total"/>
+                            <field name="amount"/>
+                        </group>
                         <notebook>
                             <page string="Deskripsi Gundul">
                                 <h1>Benarkan Fadhli gundul</h1>

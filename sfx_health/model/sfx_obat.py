@@ -64,3 +64,20 @@ class SfxObat(models.Model):
                 obat.paling_lama_dicampur_dengan = buds[0].dicampur_dengan
             else:
                 obat.paling_lama_dicampur_dengan = 'tidak ada'
+
+    # nyobo inverse function
+    # di database tidak akan ada field total ini
+    total = fields.Float(
+        compute="_compute_total",
+        inverse="_inverse_total"
+    )
+    amount = fields.Float()
+
+    @api.depends("amount")
+    def _compute_total(self):
+        for record in self:
+            record.total = 2.0 * record.amount
+
+    def _inverse_total(self):
+        for record in self:
+            record.amount = record.total / 2.0
