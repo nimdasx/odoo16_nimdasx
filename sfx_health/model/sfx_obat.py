@@ -2,11 +2,11 @@ from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
 
 
+def tigabulanlagi():
+    return fields.Date.today() + relativedelta(months=3)
+
+
 class SfxObat(models.Model):
-
-    def tigabulanlagi(self):
-        return fields.Date.today() + relativedelta(months=3)
-
     _name = 'sfx_obat'
     _description = 'Iki data obat'
 
@@ -16,7 +16,7 @@ class SfxObat(models.Model):
         help="Isikan nama obat di sini")
     tanggal = fields.Date(
         "Last Seen",
-        default=lambda self: (fields.Date.today() + relativedelta(months=3))
+        default=lambda aku_parameter_ora_kanggo: (fields.Date.today() + relativedelta(months=3))
         # default=tigabulanlagi()
     )
     embuh = fields.Char(
@@ -42,8 +42,8 @@ class SfxObat(models.Model):
     paling_lama_dicampur_dengan = fields.Char(compute="_compute_paling_lama_dicampur_dengan")
 
     @api.depends("tanggal")
-    def _compute_tanggal_embuh(self):
-        for ngorok in self:
+    def _compute_tanggal_embuh(ucuppppp):
+        for ngorok in ucuppppp:
             ngorok.tanggal_embuh = ngorok.tanggal + relativedelta(months=3)
 
     @api.depends("bud_ids.expired_setelah")

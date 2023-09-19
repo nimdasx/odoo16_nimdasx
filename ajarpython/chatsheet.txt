@@ -1,0 +1,4 @@
+lambda harus dengan parameter, minimal 1, walaupun tidak dipakai
+filter(function, iterable) function yang sebagai parameter filter harus mengeluarkan true atau false
+self bukanlah kata kunci seperti this kalau di php, tetapi konvensi yang disepakai secara umum, sebenarnya self diganti whatever ora masalah
+di dalam class gunakan __namavar agar menjadi private, jarenya chat gpt iki konvensi juga, tapi ternyata gak kok
