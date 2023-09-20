@@ -81,3 +81,25 @@ class SfxObat(models.Model):
     def _inverse_total(self):
         for record in self:
             record.amount = record.total / 2.0
+
+    # nyobo on change
+    # ini hanya terjadi di form view sehingga tidak butuh di for record in self (loop)
+    is_garden = fields.Boolean(
+        string="Garden"
+    )
+    garden_area = fields.Integer(
+        string="Garden Area"
+    )
+    garden_orientation = fields.Selection(
+        string="Garden Orientation",
+        selection=[('north', 'North'), ('south', 'Selatan Orientation')]
+    )
+
+    @api.onchange("is_garden")
+    def _onchange_is_gardern(self):
+        if not self.is_garden:
+            self.garden_area = False
+            self.garden_orientation = False
+        else:
+            self.garden_area = 23
+            self.garden_orientation = "south"

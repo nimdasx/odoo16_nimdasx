@@ -48,8 +48,13 @@
                             <page string="Deskripsi Gundul">
                                 <h1>Benarkan Fadhli gundul</h1>
                                 <group>
-                                    <field name="deskripsi"/>
                                     <field name="harga"/>
+                                    <field name="deskripsi"/>
+                                </group>
+                                <group>
+                                    <field name="is_garden"/>
+                                    <field name="garden_area"/>
+                                    <field name="garden_orientation"/>
                                 </group>
                             </page>
                             <page string="Fadhli Turu">

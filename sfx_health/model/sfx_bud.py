@@ -9,21 +9,22 @@ class SfxBud(models.Model):
     obat_id = fields.Many2one("sfx_obat", required=True, ondelete='cascade')
     dicampur_dengan = fields.Char()
     expired_setelah = fields.Integer(
-        help="Dalam satuan hari",
+        help="Dalam satuan jam",
         default=7
     )
-    expired_date = fields.Date(
-        compute="_compute_expired_date",
-        # inverse="_inverse_expired_setelah_date"
+    expired_datetime = fields.Datetime(
+        compute="_compute_expired_datetime",
+        inverse="_inverse_expired_datetime"
     )
 
     @api.depends("expired_setelah")
-    def _compute_expired_date(self):
+    def _compute_expired_datetime(self):
         for record in self:
             if not record.create_date:
                 record.create_date = fields.datetime.now()
-            record.expired_date = record.create_date + relativedelta(days=record.expired_setelah)
+            record.expired_datetime = record.create_date + relativedelta(hours=record.expired_setelah)
 
-    # def _inverse_expired_setelah_date(self):
-    #     for record in self:
-    #         record.expired_setelah = 89
+    def _inverse_expired_datetime(self):
+        for record in self:
+            delta = record.expired_datetime - record.create_date
+            record.expired_setelah = delta.total_seconds() / 3600

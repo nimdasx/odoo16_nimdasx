@@ -7,8 +7,9 @@
         <field name="arch" type="xml">
             <tree string="Sapine Mlayu">
                 <field name="dicampur_dengan"/>
+                <field name="create_date"/>
                 <field name="expired_setelah"/>
-                <field name="expired_date"/>
+                <field name="expired_datetime"/>
             </tree>
         </field>
     </record>
@@ -25,8 +26,9 @@
                     <group>
                         <group>
                             <field name="dicampur_dengan"/>
+                            <field name="create_date"/>
                             <field name="expired_setelah"/>
-                            <field name="expired_date"/>
+                            <field name="expired_datetime"/>
                         </group>
                     </group>
                 </sheet>
