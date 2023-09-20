@@ -3,30 +3,34 @@
 ## shell
 
 ```shell
-#masuk ke virtualenv
+# masuk ke virtualenv
 source mayat/bin/activate
 
-#run tanpa masuk ke virtualenv
+# run tanpa masuk ke virtualenv
 ./mayat/bin/python blablablbal
 
-#run community
+# run community
 odoo/odoo-bin -c konfig_community.conf 
 
-#run enterprise
+# run enterprise
 odoo/odoo-bin -c konfig_enterprise.conf
 
-#update all module
+# update all module
 odoo/odoo-bin -c konfig_community.conf -u all -d odoo16_community_01
 
-#update single module
+# update single module
 odoo/odoo-bin -c konfig_community.conf -u nimdasx_health -d odoo16_community_01
 
-#biar gak perlu reload -u kalau ngedit view
+# biar gak perlu reload -u kalau ngedit view
  ./odoo-bin -d rd-demo -u estate --dev xml
+ 
+# biar semua perubahan dan display log debug, pakai dev all 
+./odoo-bin -d sdsda -u asdasd --dev all
+ 
 
 ```
 
-## bug
+## bugs
 
 *bug 01 : 15 sept 2023*
 1. upgrade/install pertama semua record child (sfx_bug) berhasil diimport (ok)
@@ -37,7 +41,7 @@ odoo/odoo-bin -c konfig_community.conf -u nimdasx_health -d odoo16_community_01
 sudah ada solusi, pisahkan childnya (sfx_bug) di file sendiri  
 sfx_obat.00.csv tidak dipakai, ganti dengan 2 filx sfx_obat.csv dan sfx_bud.csv  
 
-## catatan
+## how to
 
 ### buat translation
 1. settings -> translations -> export translation :  
