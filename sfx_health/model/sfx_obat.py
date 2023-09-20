@@ -1,5 +1,7 @@
-from odoo import models, fields, api
+import odoo.exceptions
+from odoo import models, fields, api, _
 from dateutil.relativedelta import relativedelta
+from odoo.exceptions import UserError
 
 
 def tigabulanlagi():
@@ -32,7 +34,11 @@ class SfxObat(models.Model):
         help="Type is used to separate Leads and Opportunities")
     active = fields.Boolean(default=True)
     state = fields.Selection(
-        selection=[('new', 'Baru'), ('received', 'Offer Received')],
+        selection=[
+            ('new', 'Baru'),
+            ('received', 'Offer Received'),
+            ('canceled', 'Batal')
+        ],
         default="new")
     jenis_obat_id = fields.Many2one("sfx_jenis_obat")
     tag_ids = fields.Many2many("sfx_tag", string="Tag Tak Ketak")
@@ -49,6 +55,9 @@ class SfxObat(models.Model):
     @api.depends("bud_ids.expired_setelah")
     def _compute_expired_paling_lama(self):
         for turu in self:
+            if not turu.bud_ids:
+                turu.expired_paling_lama = False
+                return False
             turu.expired_paling_lama = max(turu.bud_ids.mapped('expired_setelah'))
 
     @api.depends('bud_ids.expired_setelah')
@@ -103,3 +112,25 @@ class SfxObat(models.Model):
         else:
             self.garden_area = 23
             self.garden_orientation = "south"
+
+    @api.onchange("garden_area")
+    def _onchange_garden_area(self):
+        if self.garden_area == 50:
+            return {'warning': {
+                'title': _("Warning"),
+                'message': 'This option is not supported for Authorize.net'}}
+
+    # action seko form
+    def action_received(self):
+        for baris in self:
+            if baris.state == "canceled":
+                raise UserError("nek wis canceled raiso diapak-apakke")
+            baris.state = "received"
+        return True
+
+    def action_cancel(self):
+        for baris in self:
+            if baris.state == "canceled":
+                raise UserError("iki wis batal kok dibatalke meneh ngopo")
+            baris.state = "canceled"
+        return True

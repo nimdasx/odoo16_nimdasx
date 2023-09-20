@@ -26,12 +26,23 @@
         <field name="model">sfx_obat</field>
         <field name="arch" type="xml">
             <form string="Lost Reason">
+                <header>
+                    <button name="action_received"
+                            type="object"
+                            string="Terima"
+                            attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+                    <button name="action_cancel"
+                            type="object"
+                            string="Batal"
+                            attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+                </header>
                 <sheet>
                     <h1>Atau Botak</h1>
                     <hr></hr>
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="state"/>
                             <field name="tanggal"/>
                             <field name="tanggal_embuh"/>
                             <field name="embuh"/>

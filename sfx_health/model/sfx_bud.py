@@ -28,3 +28,17 @@ class SfxBud(models.Model):
         for record in self:
             delta = record.expired_datetime - record.create_date
             record.expired_setelah = delta.total_seconds() / 3600
+
+    # nyobo action accepting
+    state = fields.Selection(
+        selection=[
+            ('new', 'Baru'),
+            ('accepted', 'Diterima'),
+            ('refused', 'Ditolak')
+        ],
+        default="new")
+
+    def action_accepting(self):
+        for baris in self:
+            baris.state = "accepted"
+        return True
