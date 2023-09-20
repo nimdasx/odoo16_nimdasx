@@ -1,7 +1,6 @@
-import odoo.exceptions
 from odoo import models, fields, api, _
 from dateutil.relativedelta import relativedelta
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 
 
 def tigabulanlagi():
@@ -48,8 +47,8 @@ class SfxObat(models.Model):
     paling_lama_dicampur_dengan = fields.Char(compute="_compute_paling_lama_dicampur_dengan")
 
     @api.depends("tanggal")
-    def _compute_tanggal_embuh(ucuppppp):
-        for ngorok in ucuppppp:
+    def _compute_tanggal_embuh(self):
+        for ngorok in self:
             ngorok.tanggal_embuh = ngorok.tanggal + relativedelta(months=3)
 
     @api.depends("bud_ids.expired_setelah")
@@ -134,3 +133,20 @@ class SfxObat(models.Model):
                 raise UserError("iki wis batal kok dibatalke meneh ngopo")
             baris.state = "canceled"
         return True
+
+    # cobo sql constraints
+    _sql_constraints = [
+        ('amount_check', 'CHECK(amount >= 0 AND amount <= 100)',
+         'The amount of an analytic distribution should be between 0 and 100.')
+    ]
+
+    _sql_constraints = _sql_constraints + [
+        ('name_check', 'unique(name)', _('Name must unique!'))
+    ]
+
+    # cobo python constrains
+    @api.constrains('garden_area')
+    def _check_date_end(self):
+        for record in self:
+            if record.garden_area < 10:
+                raise ValidationError(_("Garden Area must same or above 10"))

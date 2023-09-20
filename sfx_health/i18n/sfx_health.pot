@@ -1,0 +1,451 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sfx_health
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-20 14:14+0000\n"
+"PO-Revision-Date: 2023-09-20 14:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__active
+msgid "Active"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_search
+msgid "Ada Area"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__amount
+msgid "Amount"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_search
+msgid "Archived"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__area
+msgid "Area"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Atau Botak"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__bud_ids
+msgid "BUD Lines"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_bud__state__new
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__state__new
+msgid "Baru"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__state__canceled
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Batal"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Benarkan Fadhli gundul"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_search
+msgid "Carrier"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__create_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__create_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__create_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__create_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__create_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__create_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Daftar Beyond Usage Dage"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,help:sfx_health.field_sfx_bud__expired_setelah
+msgid "Dalam satuan jam"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.actions.act_window,name:sfx_health.sfx_jenis_obat_action
+#: model:ir.ui.menu,name:sfx_health.sfx_menu_jenis_obat
+msgid "Data Jenis Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.actions.act_window,name:sfx_health.sfx_obat_action
+#: model:ir.ui.menu,name:sfx_health.sfx_menu_obat
+msgid "Data Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.actions.act_window,name:sfx_health.sfx_tag_action
+#: model:ir.ui.menu,name:sfx_health.sfx_menu_tag
+msgid "Data Tag"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_search
+msgid "Delivery Carrier"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__deskripsi
+msgid "Deskripsi"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Deskripsi Gundul"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__dicampur_dengan
+msgid "Dicampur Dengan"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__display_name
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__display_name
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__display_name
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_bud__state__accepted
+msgid "Diterima"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_bud__state__refused
+msgid "Ditolak"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__embuh
+msgid "Embuh Ramudeng"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__expired_datetime
+msgid "Expired Datetime"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__expired_paling_lama
+msgid "Expired Paling Lama"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__expired_setelah
+msgid "Expired Setelah"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Fadhli Turu"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__garasi
+msgid "Garasi"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__is_garden
+msgid "Garden"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__garden_area
+msgid "Garden Area"
+msgstr ""
+
+#. module: sfx_health
+#. odoo-python
+#: code:addons/sfx_health/model/sfx_obat.py:0
+#, python-format
+msgid "Garden Area must same or above 10"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__garden_orientation
+msgid "Garden Orientation"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_bud_form
+msgid "Gundul Mode"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__harga
+msgid "Harga"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__id
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__id
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__id
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__id
+msgid "ID"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model,name:sfx_health.model_sfx_bud
+msgid "Iki data Beyond Usage Date"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model,name:sfx_health.model_sfx_jenis_obat
+msgid "Iki data jenisobat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model,name:sfx_health.model_sfx_obat
+msgid "Iki data obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model,name:sfx_health.model_sfx_tag
+msgid "Iki data tag"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,help:sfx_health.field_sfx_jenis_obat__name
+msgid "Isikan nama jenis obat di sini"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,help:sfx_health.field_sfx_obat__name
+msgid "Isikan nama obat di sini"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,help:sfx_health.field_sfx_tag__name
+msgid "Isikan nama tag"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__jenis_obat_id
+msgid "Jenis Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.ui.menu,name:sfx_health.sfx_menu_konfigurasi
+msgid "Konfigurasi"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud____last_update
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat____last_update
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat____last_update
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__tanggal
+msgid "Last Seen"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__write_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__write_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__write_uid
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__write_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__write_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__write_date
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__tipe_gundul__lead
+msgid "Lead"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_bud_form
+msgid "Lost In Space"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Lost Reason"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Mendem Lele"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_jenis_obat__name
+msgid "Nama Jenis Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__name
+msgid "Nama Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_tag__name
+msgid "Nama Tag"
+msgstr ""
+
+#. module: sfx_health
+#. odoo-python
+#: code:addons/sfx_health/model/sfx_obat.py:0
+#: model:ir.model.constraint,message:sfx_health.constraint_sfx_obat_name_check
+#, python-format
+msgid "Name must unique!"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__garden_orientation__north
+msgid "North"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__obat_id
+msgid "Obat"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__state__received
+msgid "Offer Received"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__tipe_gundul__opportunity
+msgid "Opportunity"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__paling_lama_dicampur_dengan
+msgid "Paling Lama Dicampur Dengan"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.ui.menu,name:sfx_health.sfx_menu_root
+msgid "SFX ZGMF"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_bud_tree
+msgid "Sapine Mlayu"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_tree
+msgid "Sapine Ucul"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields.selection,name:sfx_health.selection__sfx_obat__garden_orientation__south
+msgid "Selatan Orientation"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Sopo sik turu ora ono kok"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_bud__state
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__state
+msgid "State"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__tag_ids
+msgid "Tag Tak Ketak"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__tanggal_embuh
+msgid "Tanggal Embuh"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_bud_tree
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_form
+msgid "Terima"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.constraint,message:sfx_health.constraint_sfx_obat_amount_check
+msgid "The amount of an analytic distribution should be between 0 and 100."
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_obat_search
+msgid "Tipe Gundul"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__tipe_gundul
+msgid "Tipe Gundulnya"
+msgstr ""
+
+#. module: sfx_health
+#: model_terms:ir.ui.view,arch_db:sfx_health.sfx_bud_tree
+msgid "Tolak"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,field_description:sfx_health.field_sfx_obat__total
+msgid "Total"
+msgstr ""
+
+#. module: sfx_health
+#: model:ir.model.fields,help:sfx_health.field_sfx_obat__tipe_gundul
+msgid "Type is used to separate Leads and Opportunities"
+msgstr ""
+
+#. module: sfx_health
+#. odoo-python
+#: code:addons/sfx_health/model/sfx_obat.py:0
+#, python-format
+msgid "Warning"
+msgstr ""

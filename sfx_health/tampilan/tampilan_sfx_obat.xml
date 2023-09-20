@@ -39,6 +39,7 @@
                     <button type="action"
                             name="%(sfx_jenis_obat_action)d"
                             string="Mendem Lele"/>
+                    <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <h1>Atau Botak</h1>
