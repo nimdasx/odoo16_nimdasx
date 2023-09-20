@@ -13,7 +13,14 @@
                 <field name="state"/>
                 <button name="action_accepting"
                         type="object"
-                        string="Terima"/>
+                        icon="fa-check"
+                        title="Terima"
+                />
+                <button name="action_refusing"
+                        type="object"
+                        title="Tolak"
+                        icon="fa-times"
+                />
             </tree>
         </field>
     </record>

@@ -41,4 +41,10 @@ class SfxBud(models.Model):
     def action_accepting(self):
         for baris in self:
             baris.state = "accepted"
+            baris.obat_id.embuh = baris.dicampur_dengan
+        return True
+
+    def action_refusing(self):
+        for baris in self:
+            baris.state = "refused"
         return True

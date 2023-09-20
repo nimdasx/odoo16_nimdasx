@@ -35,6 +35,10 @@
                             type="object"
                             string="Batal"
                             attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+<!--                    iki dinggo ngelingke button ke action-->
+                    <button type="action"
+                            name="%(sfx_jenis_obat_action)d"
+                            string="Mendem Lele"/>
                 </header>
                 <sheet>
                     <h1>Atau Botak</h1>
