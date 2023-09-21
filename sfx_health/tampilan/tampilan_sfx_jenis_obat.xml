@@ -7,15 +7,32 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- list / tree / tabular -->
-<!--    <record id="sfx_obat_tree" model="ir.ui.view">-->
-<!--        <field name="name">Gundul Pacul</field>-->
-<!--        <field name="model">sfx_jenis_obat</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <tree string="Sapine Ucul">-->
-<!--                <field name="name"/>-->
-<!--            </tree>-->
-<!--        </field>-->
-<!--    </record>-->
+    <!-- form -->
+    <record id="sfx_jenis_obat_form" model="ir.ui.view">
+        <field name="name">sfx.jenis.obat.form</field>
+        <field name="model">sfx_jenis_obat</field>
+        <field name="arch" type="xml">
+            <form string="Jenis Obat">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Jenis Obat"/>
+                        <h1>
+                            <field class="text-break" name="name" placeholder="e.g. Injeksi"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Deskripsi Gundul">
+                            <field name="obat_ids">
+                                <tree default_order="name asc">
+                                    <field name="name"/>
+                                    <field name="deskripsi"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
 </odoo>

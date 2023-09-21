@@ -41,7 +41,10 @@ class SfxObat(models.Model):
         default="new")
     jenis_obat_id = fields.Many2one("sfx_jenis_obat")
     tag_ids = fields.Many2many("sfx_tag", string="Tag Tak Ketak")
+
+    # ini gak ada di database
     bud_ids = fields.One2many("sfx_bud", "obat_id", string="BUD Lines")
+
     tanggal_embuh = fields.Date(compute="_compute_tanggal_embuh")
     expired_paling_lama = fields.Integer(compute="_compute_expired_paling_lama")
     paling_lama_dicampur_dengan = fields.Char(compute="_compute_paling_lama_dicampur_dengan")
