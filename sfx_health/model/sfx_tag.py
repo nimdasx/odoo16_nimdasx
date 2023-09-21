@@ -9,3 +9,5 @@ class SfxTag(models.Model):
         string="Nama Tag",
         required=True,
         help="Isikan nama tag")
+
+    color = fields.Integer()

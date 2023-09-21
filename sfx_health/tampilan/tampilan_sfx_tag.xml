@@ -7,4 +7,20 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- form -->
+    <record id="sfx_tag_form" model="ir.ui.view">
+        <field name="name">sfx.tag.form</field>
+        <field name="model">sfx_tag</field>
+        <field name="arch" type="xml">
+            <form string="Tag">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 </odoo>

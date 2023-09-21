@@ -12,10 +12,20 @@
         <field name="name">Gundul Pacul</field>
         <field name="model">sfx_obat</field>
         <field name="arch" type="xml">
-            <tree string="Sapine Ucul">
+            <tree string="Sapine Ucul"
+                  decoration-danger="state=='canceled'"
+                  decoration-success="state=='received'">
+
+                <!-- manual ordering -->
+                <field name="sequence" widget="handle"/>
+
                 <field name="name"/>
-                <field name="tanggal"/>
+                <field name="tanggal" optional="hide" />
                 <field name="tipe_gundul"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+
+                <!-- ini harus ada karena dipakai untuk decoration-succes -->
+                <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -27,15 +37,19 @@
         <field name="arch" type="xml">
             <form string="Lost Reason">
                 <header>
+
+                    <!-- button button aksi -->
                     <button name="action_received"
                             type="object"
                             string="Terima"
-                            attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+                            states="new"
+                    />
                     <button name="action_cancel"
                             type="object"
                             string="Batal"
                             attrs="{'invisible': [('state', '=', 'canceled')]}"/>
-<!--                    iki dinggo ngelingke button ke action-->
+
+                    <!-- iki dinggo ngelingke button ke action-->
                     <button type="action"
                             name="%(sfx_jenis_obat_action)d"
                             string="Mendem Lele"/>
@@ -51,8 +65,8 @@
                             <field name="tanggal"/>
                             <field name="tanggal_embuh"/>
                             <field name="embuh"/>
-                            <field name="jenis_obat_id"/>
-                            <field name="tag_ids" widget="many2many_tags"/>
+                            <field name="jenis_obat_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             <field name="expired_paling_lama"/>
                             <field name="paling_lama_dicampur_dengan"/>
                         </group>
@@ -69,8 +83,8 @@
                                 </group>
                                 <group>
                                     <field name="is_garden"/>
-                                    <field name="garden_area"/>
-                                    <field name="garden_orientation"/>
+                                    <field name="garden_area" attrs="{'invisible':[('is_garden','=',False)]}"/>
+                                    <field name="garden_orientation" attrs="{'invisible':[('is_garden','=',False)]}"/>
                                 </group>
                             </page>
                             <page string="Fadhli Turu">
@@ -82,7 +96,7 @@
                                 </group>
                             </page>
                             <page string="Daftar Beyond Usage Dage">
-                                <field name="bud_ids"/>
+                                <field name="bud_ids" attrs="{'readonly':[('state','!=','new')]}" />
                             </page>
                         </notebook>
                     </group>

@@ -153,3 +153,11 @@ class SfxObat(models.Model):
         for record in self:
             if record.garden_area < 10:
                 raise ValidationError(_("Garden Area must same or above 10"))
+
+    # manual order
+    sequence = fields.Integer(
+        'Sequence',
+        default=1,
+        help="Used to order drugs. Lower is better"
+    )
+
