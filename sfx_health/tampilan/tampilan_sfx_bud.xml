@@ -1,5 +1,15 @@
 <odoo>
 
+    <!-- action -->
+    <record id="sfx_bud_action" model="ir.actions.act_window">
+        <field name="name">Data BUD</field>
+        <field name="res_model">sfx_bud</field>
+        <field name="view_mode">tree,form</field>
+        <!-- filter dari type obat stat button -->
+        <field name="domain">[('jenis_obat_id','=',active_id)]</field>
+
+    </record>
+
     <!-- list / tree / tabular -->
     <record id="sfx_bud_tree" model="ir.ui.view">
         <field name="name">Gundul Pacul</field>
@@ -7,6 +17,7 @@
         <field name="arch" type="xml">
             <tree string="Sapine Mlayu" editable="bottom">
                 <field name="dicampur_dengan"/>
+                <field name="obat_name"/>
                 <field name="create_date"/>
                 <field name="expired_setelah"/>
                 <field name="expired_datetime"/>

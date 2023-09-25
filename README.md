@@ -33,21 +33,23 @@ odoo/odoo-bin -c konfig_community.conf -u nimdasx_health -d odoo16_community_01
 ## bugs
 
 *bug 01 : 15 sept 2023*
+
 1. upgrade/install pertama semua record child (sfx_bug) berhasil diimport (ok)
 2. upgrade/install kedua, smua record child (sfx_bud) kok malah ilang (fail)
 3. upgrade/install ketiga, semua record child (sfx_bug) berhasil terimport lagi (ok)
 4. begitu seterusnya
 
 sudah ada solusi, pisahkan childnya (sfx_bug) di file sendiri  
-sfx_obat.00.csv tidak dipakai, ganti dengan 2 filx sfx_obat.csv dan sfx_bud.csv  
+sfx_obat.00.csv tidak dipakai, ganti dengan 2 filx sfx_obat.csv dan sfx_bud.csv
 
 ## how to
 
 ### buat translation
-1. settings -> translations -> export translation :  
-   - language : new language (empty translation template)
-   - file format : PO File
-   - Apps to Export : sfx_health
+
+1. settings -> translations -> export translation :
+    - language : new language (empty translation template)
+    - file format : PO File
+    - Apps to Export : sfx_health
 2. taruh di sfx_health/i18n
 3. buka sfx_health/i18n/sfx_health.pot menggunakan POEDIT
 4. create new translation, pilih Indonesia, save di i18n, lakukan edit2

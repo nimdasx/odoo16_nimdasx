@@ -160,4 +160,3 @@ class SfxObat(models.Model):
         default=1,
         help="Used to order drugs. Lower is better"
     )
-

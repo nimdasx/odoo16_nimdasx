@@ -1,146 +1,153 @@
 <odoo>
 
-    <!-- action -->
-    <record id="sfx_obat_action" model="ir.actions.act_window">
-        <field name="name">Data Obat</field>
-        <field name="res_model">sfx_obat</field>
-        <field name="view_mode">tree,form</field>
-        <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
-        <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
+    <data>
 
-        <!-- filter dari type obat stat button -->
-        <field name="domain">[('jenis_obat_id','=',active_id)]</field>
+        <!-- action -->
+        <record id="sfx_obat_action" model="ir.actions.act_window">
+            <field name="name">Data Obat</field>
+            <field name="res_model">sfx_obat</field>
+            <field name="view_mode">tree,form</field>
+            <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
+            <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
 
-    </record>
+            <field name="domain" eval="None"/>
 
-    <!-- list / tree / tabular -->
-    <record id="sfx_obat_tree" model="ir.ui.view">
-        <field name="name">Gundul Pacul</field>
-        <field name="model">sfx_obat</field>
-        <field name="arch" type="xml">
-            <tree string="Sapine Ucul"
-                  decoration-danger="state=='canceled'"
-                  decoration-success="state=='received'">
+            <!-- filter dari type obat stat button -->
+            <!--        <field name="domain">[('jenis_obat_id','=',active_id)]</field>-->
 
-                <!-- manual ordering -->
-                <field name="sequence" widget="handle"/>
+        </record>
 
-                <field name="name"/>
-                <field name="tanggal" optional="hide"/>
-                <field name="tipe_gundul"/>
-                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+        <!-- list / tree / tabular -->
+        <record id="sfx_obat_tree" model="ir.ui.view">
+            <field name="name">Gundul Pacul</field>
+            <field name="model">sfx_obat</field>
+            <field name="arch" type="xml">
+                <tree string="Sapine Ucul"
+                      decoration-danger="state=='canceled'"
+                      decoration-success="state=='received'">
 
-                <!-- ini harus ada karena dipakai untuk decoration-succes -->
-                <field name="state" invisible="1"/>
-            </tree>
-        </field>
-    </record>
+                    <!-- manual ordering -->
+                    <field name="sequence" widget="handle"/>
 
-    <!-- form -->
-    <record id="sfx_obat_form" model="ir.ui.view">
-        <field name="name">Iki Form Yoooo</field>
-        <field name="model">sfx_obat</field>
-        <field name="arch" type="xml">
-            <form string="Lost Reason">
-                <header>
+                    <field name="name"/>
+                    <field name="tanggal" optional="hide"/>
+                    <field name="tipe_gundul"/>
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
 
-                    <!-- button button aksi -->
-                    <button name="action_received"
-                            type="object"
-                            string="Terima"
-                            states="new"
-                    />
-                    <button name="action_cancel"
-                            type="object"
-                            string="Batal"
-                            attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+                    <!-- ini harus ada karena dipakai untuk decoration-succes -->
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
 
-                    <!-- iki dinggo ngelingke button ke action-->
-                    <button type="action"
-                            name="%(sfx_jenis_obat_action)d"
-                            string="Mendem Lele"/>
-                    <field name="state" widget="statusbar"/>
-                </header>
-                <sheet>
-                    <h1>Atau Botak</h1>
-                    <hr></hr>
+        <!-- form -->
+        <record id="sfx_obat_form" model="ir.ui.view">
+            <field name="name">Iki Form Yoooo</field>
+            <field name="model">sfx_obat</field>
+            <field name="arch" type="xml">
+                <form string="Lost Reason">
+                    <header>
+
+                        <!-- button button aksi -->
+                        <button name="action_received"
+                                type="object"
+                                string="Terima"
+                                states="new"
+                        />
+                        <button name="action_cancel"
+                                type="object"
+                                string="Batal"
+                                attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+
+                        <!-- iki dinggo ngelingke button ke action-->
+                        <button type="action"
+                                name="%(sfx_jenis_obat_action)d"
+                                string="Mendem Lele"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1>Atau Botak</h1>
+                        <hr></hr>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="state"/>
+                                <field name="tanggal"/>
+                                <field name="tanggal_embuh"/>
+                                <field name="embuh"/>
+                                <field name="jenis_obat_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="expired_paling_lama"/>
+                                <field name="paling_lama_dicampur_dengan"/>
+                            </group>
+                            <group>
+                                <field name="total"/>
+                                <field name="amount"/>
+                            </group>
+                            <notebook>
+                                <page string="Deskripsi Gundul">
+                                    <h1>Benarkan Fadhli gundul</h1>
+                                    <group>
+                                        <field name="harga"/>
+                                        <field name="deskripsi"/>
+                                    </group>
+                                    <group>
+                                        <field name="is_garden"/>
+                                        <field name="garden_area" attrs="{'invisible':[('is_garden','=',False)]}"/>
+                                        <field name="garden_orientation"
+                                               attrs="{'invisible':[('is_garden','=',False)]}"/>
+                                    </group>
+                                </page>
+                                <page string="Fadhli Turu">
+                                    <h1>Sopo sik turu ora ono kok</h1>
+                                    <group>
+                                        <field name="area"/>
+                                        <field name="garasi"/>
+                                        <field name="tipe_gundul"/>
+                                    </group>
+                                </page>
+                                <page string="Daftar Beyond Usage Dage">
+                                    <field name="bud_ids" attrs="{'readonly':[('state','!=','new')]}"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- search -->
+        <record id="sfx_obat_search" model="ir.ui.view">
+            <field name="name">Ntah iki opo kok ra mudeng aku</field>
+            <field name="model">sfx_obat</field>
+            <field name="arch" type="xml">
+                <search string="Delivery Carrier">
+                    <field name="name" string="Carrier"/>
+                    <field name="embuh"/>
+                    <!--<separator/>-->
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <filter string="Ada Area" name="arealebihdari0" domain="[('area', '&gt;', 0)]"/>
+
+                    <!-- ini menjadi default saat halaman ini dibuka, cek search_default_avaiable -->
+                    <filter name="avaiable" string="Avaiable" domain="[('state','=','new')]" help="Show only avaiable"/>
+
+                    <field name="deskripsi"
+                           string="Name and description"
+                           filter_domain="['|', ('name', 'ilike', self), ('deskripsi', 'ilike', self)]"/>
+
+                    <!--                <group expand="1" string="Group By Fadhli">-->
                     <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="state"/>
-                            <field name="tanggal"/>
-                            <field name="tanggal_embuh"/>
-                            <field name="embuh"/>
-                            <field name="jenis_obat_id" options="{'no_create': True, 'no_open': True}"/>
-                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                            <field name="expired_paling_lama"/>
-                            <field name="paling_lama_dicampur_dengan"/>
-                        </group>
-                        <group>
-                            <field name="total"/>
-                            <field name="amount"/>
-                        </group>
-                        <notebook>
-                            <page string="Deskripsi Gundul">
-                                <h1>Benarkan Fadhli gundul</h1>
-                                <group>
-                                    <field name="harga"/>
-                                    <field name="deskripsi"/>
-                                </group>
-                                <group>
-                                    <field name="is_garden"/>
-                                    <field name="garden_area" attrs="{'invisible':[('is_garden','=',False)]}"/>
-                                    <field name="garden_orientation" attrs="{'invisible':[('is_garden','=',False)]}"/>
-                                </group>
-                            </page>
-                            <page string="Fadhli Turu">
-                                <h1>Sopo sik turu ora ono kok</h1>
-                                <group>
-                                    <field name="area"/>
-                                    <field name="garasi"/>
-                                    <field name="tipe_gundul"/>
-                                </group>
-                            </page>
-                            <page string="Daftar Beyond Usage Dage">
-                                <field name="bud_ids" attrs="{'readonly':[('state','!=','new')]}"/>
-                            </page>
-                        </notebook>
+                        <!--<filter string="Tipe Gundul"
+                                name="groupbytipegundul"
+                                context="{'group_by':'tipe_gundul', 'residual_visible':True}"/>-->
+                        <filter string="Tipe Gundul"
+                                name="groupbytipegundul"
+                                context="{'group_by':'tipe_gundul'}"/>
                     </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+                </search>
+            </field>
+        </record>
 
-    <!-- search -->
-    <record id="sfx_obat_search" model="ir.ui.view">
-        <field name="name">Ntah iki opo kok ra mudeng aku</field>
-        <field name="model">sfx_obat</field>
-        <field name="arch" type="xml">
-            <search string="Delivery Carrier">
-                <field name="name" string="Carrier"/>
-                <field name="embuh"/>
-                <!--<separator/>-->
-                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <filter string="Ada Area" name="arealebihdari0" domain="[('area', '&gt;', 0)]"/>
-
-                <!-- ini menjadi default saat halaman ini dibuka, cek search_default_avaiable -->
-                <filter name="avaiable" string="Avaiable" domain="[('state','=','new')]" help="Show only avaiable"/>
-
-                <field name="deskripsi"
-                       string="Name and description"
-                       filter_domain="['|', ('name', 'ilike', self), ('deskripsi', 'ilike', self)]"/>
-
-                <!--                <group expand="1" string="Group By Fadhli">-->
-                <group>
-                    <!--<filter string="Tipe Gundul"
-                            name="groupbytipegundul"
-                            context="{'group_by':'tipe_gundul', 'residual_visible':True}"/>-->
-                    <filter string="Tipe Gundul"
-                            name="groupbytipegundul"
-                            context="{'group_by':'tipe_gundul'}"/>
-                </group>
-            </search>
-        </field>
-    </record>
+    </data>
 
 </odoo>

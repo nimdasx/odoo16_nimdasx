@@ -17,12 +17,11 @@
                 <sheet>
 
                     <div class="oe_button_box" name="button_box">
-                        <button name="%(sfx_obat_action)d"
+                        <button name="%(sfx_bud_action)d"
                                 type="action"
-                                string="Obat"
                                 class="oe_stat_button"
                                 icon="fa-users">
-                            <field string="Obat" name="obat_count" widget="statinfo"/>
+                            <field string="BUD" name="bud_count" widget="statinfo"/>
                         </button>
                     </div>
 
@@ -32,14 +31,12 @@
                             <field class="text-break" name="name" placeholder="e.g. Injeksi"/>
                         </h1>
                     </div>
-                    <!--
                     <group>
                         <field name="obat_count"/>
                     </group>
-                    -->
                     <notebook>
-                        <page string="Deskripsi Gundul">
-                            <field name="obat_ids">
+                        <page string="Daftar Obat">
+                            <field name="obat_ids" attrs="{'readonly': [('id', '!=', False)]}">
                                 <tree default_order="name asc">
                                     <field name="name"/>
                                     <field name="deskripsi"/>

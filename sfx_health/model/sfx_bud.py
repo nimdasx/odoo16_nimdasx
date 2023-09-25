@@ -48,3 +48,8 @@ class SfxBud(models.Model):
         for baris in self:
             baris.state = "refused"
         return True
+
+    # relasi ke sfx_jenis_obat via sfx_obat, ini dipakai untuk oe_stat_button di form sfx_jenis_obat
+    jenis_obat_id = fields.Many2one('sfx_jenis_obat', related="obat_id.jenis_obat_id", store=True)
+    # nampilke nama obat neng table sfx_bud
+    obat_name = fields.Char(related="obat_id.name")
