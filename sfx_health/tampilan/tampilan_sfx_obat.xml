@@ -5,6 +5,8 @@
         <field name="name">Data Obat</field>
         <field name="res_model">sfx_obat</field>
         <field name="view_mode">tree,form</field>
+        <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
+        <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
     </record>
 
     <!-- list / tree / tabular -->
@@ -116,6 +118,14 @@
                 <!--<separator/>-->
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
                 <filter string="Ada Area" name="arealebihdari0" domain="[('area', '&gt;', 0)]"/>
+
+                <!-- ini menjadi default saat halaman ini dibuka, cek search_default_avaiable -->
+                <filter name="avaiable" string="Avaiable" domain="[('state','=','new')]" help="Show only avaiable"/>
+
+                <field name="deskripsi"
+                       string="Name and description"
+                       filter_domain="['|', ('name', 'ilike', self), ('deskripsi', 'ilike', self)]"/>
+
                 <!--                <group expand="1" string="Group By Fadhli">-->
                 <group>
                     <!--<filter string="Tipe Gundul"
