@@ -16,10 +16,11 @@
         'data/sfx_obat.csv',
         'data/sfx_bud.csv',
         'keamanan/ir.model.access.csv',
-        'tampilan/tampilan_sfx_jenis_obat.xml',
         'tampilan/tampilan_sfx_tag.xml',
         'tampilan/tampilan_sfx_obat.xml',
         'tampilan/tampilan_sfx_bud.xml',
+        'tampilan/tampilan_sfx_jenis_obat.xml',
+        'tampilan/tampilan_res_users.xml',
         'tampilan/menu.xml',
     ],
 
