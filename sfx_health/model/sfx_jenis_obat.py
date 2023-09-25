@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class SfxJenisObat(models.Model):
@@ -16,3 +16,11 @@ class SfxJenisObat(models.Model):
     # ini gak ada di dabase, adanya di related tabelnya
     # daftar obat yang jenisnya ini
     obat_ids = fields.One2many("sfx_obat", "jenis_obat_id", string="BUD Lines")
+
+    # jumlah obat per jenis obat ini
+    obat_count = fields.Integer(string='Number of Obat', compute='_compute_obat_count')
+
+    @api.depends('obat_ids')
+    def _compute_obat_count(self):
+        for record in self:
+            record.obat_count = len(record.obat_ids)

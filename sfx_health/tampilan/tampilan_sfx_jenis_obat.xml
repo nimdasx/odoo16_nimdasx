@@ -13,13 +13,30 @@
         <field name="model">sfx_jenis_obat</field>
         <field name="arch" type="xml">
             <form string="Jenis Obat">
+
                 <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(sfx_obat_action)d"
+                                type="action"
+                                string="Obat"
+                                class="oe_stat_button"
+                                icon="fa-users">
+                            <field string="Obat" name="obat_count" widget="statinfo"/>
+                        </button>
+                    </div>
+
                     <div class="oe_title">
                         <label for="name" string="Jenis Obat"/>
                         <h1>
                             <field class="text-break" name="name" placeholder="e.g. Injeksi"/>
                         </h1>
                     </div>
+                    <!--
+                    <group>
+                        <field name="obat_count"/>
+                    </group>
+                    -->
                     <notebook>
                         <page string="Deskripsi Gundul">
                             <field name="obat_ids">
@@ -31,6 +48,7 @@
                         </page>
                     </notebook>
                 </sheet>
+
             </form>
         </field>
     </record>

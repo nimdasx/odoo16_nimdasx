@@ -7,6 +7,10 @@
         <field name="view_mode">tree,form</field>
         <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
         <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
+
+        <!-- filter dari type obat stat button -->
+        <field name="domain">[('jenis_obat_id','=',active_id)]</field>
+
     </record>
 
     <!-- list / tree / tabular -->
@@ -22,7 +26,7 @@
                 <field name="sequence" widget="handle"/>
 
                 <field name="name"/>
-                <field name="tanggal" optional="hide" />
+                <field name="tanggal" optional="hide"/>
                 <field name="tipe_gundul"/>
                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
 
@@ -98,7 +102,7 @@
                                 </group>
                             </page>
                             <page string="Daftar Beyond Usage Dage">
-                                <field name="bud_ids" attrs="{'readonly':[('state','!=','new')]}" />
+                                <field name="bud_ids" attrs="{'readonly':[('state','!=','new')]}"/>
                             </page>
                         </notebook>
                     </group>
