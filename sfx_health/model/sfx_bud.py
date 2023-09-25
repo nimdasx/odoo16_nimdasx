@@ -53,3 +53,22 @@ class SfxBud(models.Model):
     jenis_obat_id = fields.Many2one('sfx_jenis_obat', related="obat_id.jenis_obat_id", store=True)
     # nampilke nama obat neng table sfx_bud
     obat_name = fields.Char(related="obat_id.name")
+
+    # inherit on create
+    @api.model
+    def create(self, vals):
+
+        # ngene yo iso
+        self.env['sfx_obat'].browse(vals['obat_id']).state = 'received'
+
+        # golei record obat dan ganti value-nya
+        # obat = self.env['sfx_obat'].browse(vals['obat_id'])
+
+        # ngene yo iso
+        # obat.state = 'received'
+
+        # ngene yo iso
+        # obat.write({'state': 'received'})
+
+        # Then call super to execute the parent method
+        return super().create(vals)

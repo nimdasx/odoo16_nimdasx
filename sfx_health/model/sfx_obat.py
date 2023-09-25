@@ -151,8 +151,9 @@ class SfxObat(models.Model):
     @api.constrains('garden_area')
     def _check_date_end(self):
         for record in self:
-            if record.garden_area < 10:
-                raise ValidationError(_("Garden Area must same or above 10"))
+            if record.is_garden:
+                if record.garden_area < 10:
+                    raise ValidationError(_("Garden Area must same or above 10"))
 
     # manual order
     sequence = fields.Integer(
@@ -160,3 +161,18 @@ class SfxObat(models.Model):
         default=1,
         help="Used to order drugs. Lower is better"
     )
+
+    # inherit on create
+    @api.model
+    def create(self, vals):
+        # Do some business logic, modify vals...
+        ...
+        print("fadhli gaswir")
+        # Then call super to execute the parent method
+        return super().create(vals)
+
+    # cegah penhapusan
+    @api.ondelete(at_uninstall=False)
+    def _unlink_if_telo(self):
+        if any(record.state != 'new' for record in self):
+            raise UserError("selain state anyar raoleh dihapus")
