@@ -17,6 +17,7 @@
         <field name="arch" type="xml">
             <tree string="Sapine Mlayu" editable="bottom">
                 <field name="dicampur_dengan"/>
+                <field name="res_partner_id"/>
                 <field name="obat_name"/>
                 <field name="create_date"/>
                 <field name="expired_setelah"/>
@@ -44,7 +45,7 @@
             <form string="Lost In Space">
                 <sheet>
                     <h1>Gundul Mode</h1>
-                    <hr></hr>
+                    <hr/>
                     <group>
                         <group>
                             <field name="dicampur_dengan"/>

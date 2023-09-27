@@ -72,3 +72,6 @@ class SfxBud(models.Model):
 
         # Then call super to execute the parent method
         return super().create(vals)
+
+    # dilinkke ke partner, go nyobo gawe invoice
+    res_partner_id = fields.Many2one("res.partner", string="Buyer")
