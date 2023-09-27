@@ -59,10 +59,18 @@
                                 string="Batal"
                                 attrs="{'invisible': [('state', '=', 'canceled')]}"/>
 
+                        <!-- jika state received ada tombol sold -->
+                        <button name="action_sold"
+                                type="object"
+                                string="Jual"
+                                states="received"
+                        />
+
                         <!-- iki dinggo ngelingke button ke action-->
                         <button type="action"
                                 name="%(sfx_jenis_obat_action)d"
                                 string="Mendem Lele"/>
+
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>

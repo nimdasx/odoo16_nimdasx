@@ -36,6 +36,7 @@ class SfxObat(models.Model):
         selection=[
             ('new', 'Baru'),
             ('received', 'Offer Received'),
+            ('sold', 'Terjual'),
             ('canceled', 'Batal')
         ],
         default="new")
@@ -176,3 +177,11 @@ class SfxObat(models.Model):
     def _unlink_if_telo(self):
         if any(record.state != 'new' for record in self):
             raise UserError("selain state anyar raoleh dihapus")
+
+    # action seko form
+    def action_sold(self):
+        for baris in self:
+            if baris.state == "canceled":
+                raise UserError("nek wis canceled raiso diapak-apakke")
+            baris.state = "sold"
+        return True

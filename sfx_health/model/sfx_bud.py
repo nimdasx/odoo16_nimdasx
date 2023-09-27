@@ -75,3 +75,8 @@ class SfxBud(models.Model):
 
     # dilinkke ke partner, go nyobo gawe invoice
     res_partner_id = fields.Many2one("res.partner", string="Buyer")
+
+    # Konstrain SQL untuk membuat partner_id unik untuk setiap obat
+    _sql_constraints = [
+        ('unique_partner_per_obat', 'UNIQUE(obat_id, res_partner_id)', 'Partner must be unique per obat!'),
+    ]
