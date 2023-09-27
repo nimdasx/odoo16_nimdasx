@@ -14,9 +14,11 @@ class SfxObat(models.Model):
     name = fields.Char(
         string="Nama Obat",
         required=True,
+        tracking=True,
         help="Isikan nama obat di sini")
     tanggal = fields.Date(
-        "Last Seen",
+        "Tanggal",
+        tracking=True,
         default=lambda aku_parameter_ora_kanggo: (fields.Date.today() + relativedelta(months=3))
         # default=tigabulanlagi()
     )
@@ -28,11 +30,13 @@ class SfxObat(models.Model):
     area = fields.Integer(copy=False)
     garasi = fields.Boolean()
     tipe_gundul = fields.Selection(
+        tracking=True,
         string='Tipe Gundulnya',
         selection=[('lead', 'Lead'), ('opportunity', 'Opportunity')],
         help="Type is used to separate Leads and Opportunities")
     active = fields.Boolean(default=True)
     state = fields.Selection(
+        tracking=True,
         selection=[
             ('new', 'Baru'),
             ('received', 'Offer Received'),
@@ -185,3 +189,6 @@ class SfxObat(models.Model):
                 raise UserError("nek wis canceled raiso diapak-apakke")
             baris.state = "sold"
         return True
+
+    # tambahkan chatter
+    _inherit = ['mail.thread','mail.activity.mixin']

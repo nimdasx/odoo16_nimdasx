@@ -7,7 +7,7 @@
     'application': True,
     'category': 'Productivity',
     'license': 'Other proprietary',
-    'depends': ['base'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
