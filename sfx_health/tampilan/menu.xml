@@ -1,9 +1,16 @@
 <odoo>
-    <menuitem id="sfx_menu_root" name="SFX ZGMF">
-        <menuitem sequence="1" id="sfx_menu_obat" action="sfx_obat_action"/>
-        <menuitem sequence="2" id="sfx_menu_konfigurasi" name="Konfigurasi">
-            <menuitem id="sfx_menu_jenis_obat" action="sfx_jenis_obat_action"/>
-            <menuitem id="sfx_menu_tag" action="sfx_tag_action"/>
+    <data>
+        <menuitem id="sfx_menu_root" name="SFX ZGMF">
+            <menuitem sequence="1"
+                      id="sfx_menu_obat"
+                      action="sfx_obat_action"/>
+            <menuitem sequence="2" id="sfx_menu_konfigurasi" name="Konfigurasi">
+                <menuitem id="sfx_menu_jenis_obat" action="sfx_jenis_obat_action"/>
+                <menuitem id="sfx_menu_tag" action="sfx_tag_action"/>
+            </menuitem>
+            <menuitem sequence="3"
+                      id="menu_sfx_obat_kanban"
+                      action="action_sfx_obat_kanban"/>
         </menuitem>
-    </menuitem>
+    </data>
 </odoo>

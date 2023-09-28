@@ -2,19 +2,30 @@
 
     <data>
 
-        <!-- action -->
-        <record id="sfx_obat_action" model="ir.actions.act_window">
-            <field name="name">Data Obat</field>
-            <field name="res_model">sfx_obat</field>
-            <field name="view_mode">tree,form</field>
-            <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
-            <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
+        <!-- view kanban -->
+        <record id="view_sfx_obat_kanban" model="ir.ui.view">
+            <field name="name">sfx.obat.kanban</field>
+            <field name="model">sfx_obat</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="tipe_gundul" records_draggable="false">
 
-            <field name="domain" eval="None"/>
+                    <!-- ini dibutuhkan agar bisa di t-if -->
+                    <field name="state"/>
 
-            <!-- filter dari type obat stat button -->
-            <!--        <field name="domain">[('jenis_obat_id','=',active_id)]</field>-->
-
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <field name="name"/>
+                                <field name="is_garden"/>
+                                <div t-if="record.state.raw_value == 'new'">
+                                    This is new!
+                                </div>
+                                <field name="tag_ids" options="{'color_field': 'color'}"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
         </record>
 
         <!-- list / tree / tabular -->
@@ -77,7 +88,7 @@
                     </header>
                     <sheet>
                         <h1>Atau Botak</h1>
-                        <hr></hr>
+                        <hr/>
                         <group>
                             <group>
                                 <field name="name"/>
@@ -161,6 +172,30 @@
                     </group>
                 </search>
             </field>
+        </record>
+
+        <!-- action -->
+        <record id="sfx_obat_action" model="ir.actions.act_window">
+            <field name="name">DO Tree</field>
+            <field name="res_model">sfx_obat</field>
+            <!-- tambahkan kanban agar ada pilihan kanban view -->
+            <field name="view_mode">tree,form,kanban</field>
+            <!-- agar sewaktu di klik otomatis akan terfilter di search view filter name="avaiable" -->
+            <field name="context">{'search_default_avaiable': True, 'search_default_current': True}</field>
+
+            <field name="domain" eval="None"/>
+
+            <!-- filter dari type obat stat button -->
+            <!--        <field name="domain">[('jenis_obat_id','=',active_id)]</field>-->
+
+        </record>
+
+        <!-- action untuk lihat kanban langsung dari klik menu -->
+        <record id="action_sfx_obat_kanban" model="ir.actions.act_window">
+            <field name="name">DO Kanban</field>
+            <field name="res_model">sfx_obat</field>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_sfx_obat_kanban"/>
         </record>
 
     </data>
