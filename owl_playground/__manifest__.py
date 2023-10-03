@@ -24,7 +24,6 @@
     'installable': True,
     'data': [
         'views/templates.xml',
-        'views/semprotan.xml',
     ],
     'assets': {
         'owl_playground.assets_playground': [

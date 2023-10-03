@@ -2,11 +2,13 @@
 <templates xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+        <div class="container-fluid">
+        <h2>Ini H2 dari playground.xml</h2>
+            <div class="p-3">
+            halo dunia
         </div>
-        <p>Counter: <t t-esc="state.value"/></p>
-        <button class="btn btn-primary" t-on-click="increment">Increment</button>
+            <Counter/>
+        </div>
     </t>
 
 </templates>
