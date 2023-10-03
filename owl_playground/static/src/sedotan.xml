@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.semprotanx" owl="1">
+        <div class="p-3">
+            sedotan dunia semprot
+        </div>
+    </t>
+
+</templates>

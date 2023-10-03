@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+          <template id="owl_playground.semprotan" name="Luwih sempit soale">
+            <html>
+                <head>
+                    <t t-call-assets="owl_playground.assets_playground"/>
+                </head>
+
+                <body>
+                    <h1>gak enak body</h1>
+                </body>
+            </html>
+          </template>
+    </data>
+</odoo>
