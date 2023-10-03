@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.todo" owl="1">
+        <h3>Ini H3 dari todo.xml</h3>
+        <div class="card">
+          <div class="card-body">
+            <ol>
+                <li>
+                    <t t-esc="ngopo.id"/> <t t-esc="ngopo.description"/> <t t-esc="ngopo.done"/>
+                </li>
+            </ol>
+          </div>
+        </div>
+    </t>
+
+</templates>
