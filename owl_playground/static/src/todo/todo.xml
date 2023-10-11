@@ -7,7 +7,7 @@
           <div class="card-body">
             <ol>
                 <li>
-                    <t t-esc="ngopo.id"/> <t t-esc="ngopo.description"/> <t t-esc="ngopo.done"/>
+                    <t t-out="ngopo.id"/> <t t-out="ngopo.description"/> <t t-out="ngopo.done"/>
                 </li>
             </ol>
           </div>
